@@ -1,0 +1,33 @@
+:root {
+    --primary-color: #007bff;
+    --text-color: #343a40;
+    --page-color: #fdfdfd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+}
+
+main {
+    max-width: 1920px;
+    flex: 1;
+    margin: auto;
+    background-color: var(--page-color);
+}
+
+input:focus {
+    box-shadow: none !important;
+}

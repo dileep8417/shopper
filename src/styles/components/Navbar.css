@@ -1,0 +1,9 @@
+.navbar {
+    padding: 12px 48px;
+}
+
+.navbar-brand {
+    font-size: 32px;
+    color: white;
+    font-weight: 600;
+}

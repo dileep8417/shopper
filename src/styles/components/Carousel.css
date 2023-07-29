@@ -1,0 +1,21 @@
+#offers-carousel {
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto 42px;
+}
+
+#offers-carousel .carousel-item {
+    max-height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#offers-carousel .carousel-indicators {
+    margin-bottom: -2.5rem;
+}
+
+#offers-carousel .carousel-indicators button {
+    padding: 2px;
+    background-color: #0d6efd;
+    border-radius: 6px;
+}
