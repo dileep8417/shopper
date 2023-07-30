@@ -17,3 +17,9 @@
 .search-container button svg {
     margin: -2px 0 0;
 }
+
+@media (max-width: 590px) {
+    .search-container {
+        min-width: 90%;
+    }
+}

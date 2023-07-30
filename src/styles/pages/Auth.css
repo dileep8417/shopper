@@ -1,0 +1,19 @@
+.form .row {
+    width: 424px;
+    margin: 128px 0 42px;
+}
+
+form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+form .form-control {
+    width: 100%;
+}
+
+form button {
+    width: 100%;
+}

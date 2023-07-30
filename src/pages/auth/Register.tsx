@@ -1,8 +1,16 @@
+import '../../styles/pages/Auth.css';
+
 const Register = () => {
     return (
-        <div className="container register">
+        <div className="container form">
             <div className="row">
-                <form className="register-form form">
+                <h3>Register</h3>
+                <form className="register-form">
+                <div className="form-group">
+                        <label htmlFor="">Name</label>
+                        <input type="text" className="form-control" placeholder="Dileep Atyam" />
+                    </div>
+
                     <div className="form-group">
                         <label htmlFor="">Email</label>
                         <input type="text" className="form-control" placeholder="abc@gmail.com" />

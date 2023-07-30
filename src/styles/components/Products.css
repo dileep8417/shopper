@@ -1,5 +1,6 @@
 .products .row {
     gap: 8px;
+    justify-content: center;
 }
 
 .product-card {
