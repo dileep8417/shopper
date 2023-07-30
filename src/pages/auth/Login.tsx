@@ -9,9 +9,10 @@ const Login = () => {
     function loginSubmit(e) {
         e.preventDefault();
         const emailField = emailRef.current! as HTMLInputElement;
-        const passwordField = pwdRef.current!;
-        if (emailField.value) {
+        const passwordField = pwdRef.current! as HTMLInputElement;
 
+        if (emailField.value && passwordField.value) {
+            // submit login
         }
     }
 
@@ -27,7 +28,7 @@ const Login = () => {
 
                     <div className="form-group">
                         <label htmlFor="">Password</label>
-                        <input ref={pwdRef} type="password" className="form-control" />
+                        <input ref={pwdRef} type="password" className="form-control" placeholder='Password' />
                     </div>
 
                     <button className="btn btn-primary ml-auto" onClick={loginSubmit}>Login</button>

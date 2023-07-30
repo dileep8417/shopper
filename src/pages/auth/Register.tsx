@@ -18,7 +18,7 @@ const Register = () => {
 
                     <div className="form-group">
                         <label htmlFor="">Password</label>
-                        <input type="password" className="form-control" />
+                        <input type="password" className="form-control" placeholder='Password' />
                     </div>
 
                     <button className="btn btn-primary ml-auto">Register</button>
