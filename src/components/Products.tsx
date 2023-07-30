@@ -3,6 +3,7 @@ import '../styles/components/Products.css';
 import ProductCard from "./ProductCard";
 import { ApplicationState, ProductType } from '../types/reduxTypes';
 import { Link } from 'react-router-dom';
+import { baseUrl } from '../utils';
 
 const Products = () => {
 
@@ -18,7 +19,7 @@ const Products = () => {
                 <div className="row">
                     {products.length > 0 && products.map((product: ProductType) => {
                         return (
-                            <Link to={`/product/${product.id}`} key={product.id} className='product-card'><ProductCard productDetails={product} /></Link>
+                            <Link to={baseUrl(`/product/${product.id}`)} key={product.id} className='product-card'><ProductCard productDetails={product} /></Link>
                         );
                     })}
                 </div>

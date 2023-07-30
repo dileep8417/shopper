@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setIsLoading } from '../slices/productsSlice';
+import { baseUrl } from '../utils';
 
 
 type SearchBarProps = {
@@ -28,7 +29,7 @@ const Searchbar = ({ searchValue }: SearchBarProps) => {
             return;
         }
         dispatch(setIsLoading());
-        navigate('/search?product=' + searchTerm);
+        navigate(baseUrl('/search?product=' + searchTerm));
     }
 
     return (
