@@ -11,32 +11,18 @@
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .product-card:hover {
-    scale: 1.02;
+    scale: 1.1;
+    transition: all .2s;
 }
 
 .product-card .content {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-.product-card .content .rate-container {
-    color: rgb(255, 196, 0);
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    margin: 6px 0;
-}
-
-.product-card .content .rate-container .reviews-count {
-    color: #686868;
-}
-
-.product-card .content .rate-container span {
-    color: var(--text-color);
 }
 
 .product-card img {
@@ -55,4 +41,5 @@
 
 .product-card .content .price {
     font-weight: 500;
+    color: var(--text-color);
 }

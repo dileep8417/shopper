@@ -2,8 +2,13 @@
     padding: 12px 48px;
 }
 
-.navbar-brand {
+.navbar-brand a {
     font-size: 32px;
     color: white;
     font-weight: 600;
+    text-decoration: none;
+}
+
+.navbar-brand:hover {
+    color: white;
 }

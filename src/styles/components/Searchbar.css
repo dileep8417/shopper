@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     margin: 0 auto 24px;
+    min-width: 504px;
 }
 
 .search-container input {

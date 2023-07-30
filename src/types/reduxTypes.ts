@@ -21,3 +21,8 @@ export type categoryCardProps = {
         icon: string,
     },
 };
+
+export type RatingProps = {
+    rating: number,
+    reviewCount: number
+};

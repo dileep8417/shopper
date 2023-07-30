@@ -1,0 +1,15 @@
+.rate-container {
+    color: rgb(255, 196, 0);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin: 6px 0;
+}
+
+.rate-container .reviews-count {
+    color: #686868;
+}
+
+.rate-container span {
+    color: var(--text-color);
+}
