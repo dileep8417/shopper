@@ -33,6 +33,7 @@ jobs:
 
       - name: Set up Node
         uses: actions/setup-node@v3
+        working-directory: ./front-end
         with:
           node-version: 18
           cache: 'npm'
