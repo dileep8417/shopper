@@ -7,6 +7,4 @@ const rootReducer = combineReducers({
     'categories': categoriesReducer,
 });
 
-export type ApplicationState = ReturnType<typeof rootReducer>;
-
 export default rootReducer;

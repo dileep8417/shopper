@@ -1,14 +1,15 @@
 import { useSelector } from 'react-redux';
 import '../styles/components/Products.css';
 import ProductCard from "./ProductCard";
-import { ApplicationState, ProductType } from '../types/reduxTypes';
+import { ProductType } from '../types/reduxTypes';
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../utils';
+import { AppState } from '../app/store';
 
 const Products = () => {
 
-    const products = useSelector((state: ApplicationState) =>  state.products.products);
-    const isLoading = useSelector((state: ApplicationState) => state.products.isLoading);
+    const products = useSelector((state: AppState) =>  state.products.products);
+    const isLoading = useSelector((state: AppState) => state.products.isLoading);
 
     return (
         <section className="products container">

@@ -1,7 +1,3 @@
-import { ApplicationState as ApplicationStateType } from "../app/reducer";
-
-export type ApplicationState = ApplicationStateType;
-
 export type ProductType = {
     id: number,
     category: string,

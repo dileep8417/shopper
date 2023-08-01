@@ -2,17 +2,15 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"; 
 import { fetchProductById, fullDescription, resetProduct } from "../slices/productsSlice";
-import { ApplicationState } from "../types/reduxTypes";
 import '../styles/pages/ProductDetails.css';
 import Rating from "../components/Rating";
+import { AppDispatch, AppState } from "../app/store";
 
 const ProductDetails = () => {
     const { productId } = useParams();
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
-    const product = useSelector((state: ApplicationState) => state.products.product);
-    const isLoading = useSelector((state: ApplicationState) => state.products.isLoading);
-    const showFullDescription = useSelector((state: ApplicationState) => state.products.showFullDescription);
+    const {product, showFullDescription, isLoading} = useSelector((state: AppState) => state.products);
     const maxDescriptionChars = 140;
 
     useEffect(() => {

@@ -9,7 +9,7 @@ const initialState = {
     showFullDescription: false
 };
 
-export const fetchProducts = createAsyncThunk('products/fetcProducts', async (searchTerm?: string) => {
+export const fetchProducts = createAsyncThunk('products/fetcProducts', async (searchTerm: (string | null)) => {
     const {data} = await axios.get('https://fakestoreapi.com/products');
     if (searchTerm) {
         const search = searchTerm.toLocaleLowerCase();
@@ -18,7 +18,7 @@ export const fetchProducts = createAsyncThunk('products/fetcProducts', async (se
     return data;
 });
 
-export const fetchProductById = createAsyncThunk('products/fetchProductById', async (productId) => {
+export const fetchProductById = createAsyncThunk('products/fetchProductById', async (productId: (string | undefined)) => {
     const {data} = await axios.get('https://fakestoreapi.com/products/' + productId );
     return data;
 });

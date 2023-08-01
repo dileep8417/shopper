@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import '../../styles/pages/Auth.css';
 
 const Login = () => {
@@ -6,7 +6,7 @@ const Login = () => {
     const emailRef = useRef(null);
     const pwdRef = useRef(null);
 
-    function loginSubmit(e) {
+    function loginSubmit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
         const emailField = emailRef.current! as HTMLInputElement;
         const passwordField = pwdRef.current! as HTMLInputElement;

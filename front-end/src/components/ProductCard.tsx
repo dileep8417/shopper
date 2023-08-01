@@ -1,5 +1,4 @@
 import { ProductType } from "../types/reduxTypes";
-import { AiTwotoneStar } from 'react-icons/ai';
 import Rating from "./Rating";
 
 type productProps = {

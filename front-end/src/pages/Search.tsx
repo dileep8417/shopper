@@ -4,15 +4,15 @@ import Searchbar from "../components/Searchbar";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../slices/productsSlice";
-import { ApplicationState } from "../app/reducer";
+import { AppDispatch, AppState } from "../app/store";
 
 const Search = () => {
     const [searchParams] = useSearchParams();
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
 
     const searchTerm: (string | null) = searchParams.get('product');
-    const isLoading = useSelector((state: ApplicationState) => state.products.isLoading);
+    const isLoading = useSelector((state: AppState) => state.products.isLoading);
 
     console.log(searchTerm);
     

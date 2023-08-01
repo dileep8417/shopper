@@ -6,16 +6,15 @@ import Searchbar from "../components/Searchbar";
 import { useEffect } from 'react';
 import { fetchCategories } from '../slices/categoriesSlice';
 import { fetchProducts } from '../slices/productsSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import { ApplicationState } from '../types/reduxTypes';
-
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../app/store';
 
 const Home = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
         dispatch(fetchCategories());
-        dispatch(fetchProducts());
+        dispatch(fetchProducts(null));
     }, []);
 
     return (
