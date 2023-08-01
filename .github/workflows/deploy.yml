@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Front-end
 
 on:
   # Runs on pushes targeting the default branch
@@ -27,29 +27,34 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    env:
-      CI: true
-      NODE_OPTIONS: "--trace-warnings"
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14' # Or the appropriate Node.js version used in your project
-          cache: 'npm'
+      - name: Cache node modules 
+        id: cache-nodemodules 
+        uses: actions/cache@v3 
+        env: cache-name: cache-node-modules 
+        with: 
+          path: front-end/node_modules 
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./linters/package-lock.json') }} 
 
-      - name: Change directory to frontend
+      - name: Install dependencies
         working-directory: ./front-end
-        run: |
-          npm ci
-          npm run build
+        run: npm ci
+
+      - name: Build
+        working-directory: ./front-end
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.front-end/dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./front-end/dist # The build output directory for Vite
+        uses: actions/deploy-pages@v1
