@@ -34,10 +34,11 @@ jobs:
       - name: Cache node modules 
         id: cache-nodemodules 
         uses: actions/cache@v3 
-        env: cache-name: cache-node-modules 
+        env: 
+          cache-name: cache-node-modules 
         with: 
           path: front-end/node_modules 
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./linters/package-lock.json') }} 
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./front-end/package-lock.json') }} 
 
       - name: Install dependencies
         working-directory: ./front-end
