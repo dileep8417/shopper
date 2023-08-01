@@ -33,14 +33,14 @@ jobs:
 
       - name: Set up Node
         uses: actions/setup-node@v3
-        working-directory: ./front-end
         with:
           node-version: 18
           cache: 'npm'
+        working-directory: ./front-end
 
       - name: Install dependencies
         working-directory: ./front-end
-        run: npm install
+        run: npm ci
 
       - name: Build
         working-directory: ./front-end
