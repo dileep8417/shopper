@@ -41,12 +41,10 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./front-end/package-lock.json') }} 
 
       - name: Install dependencies
-        working-directory: ./front-end
-        run: npm ci
+        run: npm ci --prefix ./front-end
 
       - name: Build
-        working-directory: ./front-end
-        run: npm run build
+        run: npm run build --prefix ./front-end
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
